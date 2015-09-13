@@ -30,7 +30,11 @@ They both recognize that choosing good names can be a struggle, especially when 
 
 Alex and Zoab don't necessarily agree with this statement. They understand that the person making this statement is a general purpose programming language designer, and they can understand the validity of this claim for general purpose programming languages. However, it's not obvious to them that for DSLs in particular, you'd want to design them with a plan for growth. Consider a language that has already expanded to fill its domain, where its domain is likely to remain static. In this case it wouldn't necessarily be a good idea to plan for growth. An example of this kind of language is Picobot - if there's a trade off between making Picobot easier to use or making it easier to grow, we should choose to make it easy to use because we don't expect to have to grow it. 
 
+> We need to put tools for lanugage growth in the hands of the users. [Steele, 1998]
 
+What does it mean to put the tools for growth into the hands of the users? Alex thinks that means that there should be a way for one users changes to the language to be accepted by the rest of the community. Zoab thinks that one problem with this is that the language could easily grow to be too large because, as we already know, we can't ever take anything out of a language while we're free to add stuff in, so if we make adding stuff easy the growth of the language could quickly spiral out of control. Alex thinks that these issues would still be faced by a central language writing body, and by allowing for any user to contribute we'd have to tackle these issues with a review process. Zoab thinks in practice, even with a review process, bad code and bad style can slip through and become part of the project as a whole. 
+
+The question, then, is whether having a project that is user-responsive and can be built on quickly is worth the cost of some usability difficulties. Alex notes that this tradeoff isn't a necessary one - if we can figure out how to be better reviewers, we can minimize the downsides of open sourcing while not compromising on the benefits. 
 
 ---
 
@@ -40,7 +44,7 @@ How do the themes of _Growing a Language_ relate to the lab we did this week?
 
 **Response**
 
-
+We didn't necessarily grow the vocab, but we grew the syntax - initially you could only have one word sentences, now you can chain verbs together.
 
 ---
 
