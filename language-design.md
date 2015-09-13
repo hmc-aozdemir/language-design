@@ -86,7 +86,23 @@ In what way is an API a language?
 
 **Response**
 
+We both agree that an API is indeed a language. To think about how an API is a language we note that languages have both vocabulary and syntax (both character choice and rules of composition). API's are very restricted in terms of syntax by their host language. This means that often their syntax is often trivial. That being said they still allow for a rich variety of vocabulary in the form of operations that can be performed.
 
+API's are also much esier to build than some type of DSLs (say external DSLs). For this reason many authors [Mernik et al., 2005] identify API's as being the first stage in the development of DSLs that ultimately become complex external DSLs.
+
+A number of concerns in designing good APIs (as identified by Bloch [Bloch, 2006]) are also concerns in designing a language.
+
+While one might be tempted to divide languages from APIs on the basis of syntax complexity, some API's end up having non-trivial syntax. For example, consider the SQL query generator [QueryDSL](https://github.com/querydsl/querydsl/tree/master/querydsl-sql). It allows the user to construct SQL queries using Java syntax. One might imagine that a query beginning
+
+    query_builder.from(my_table)
+
+might be well formed, but
+
+    query_builder.from(my_table).from(other_table)
+
+might not be.
+
+Also, the definition of API is blurred. While Zoab thought APIs should be in the language the programmer is working in, Alex was not as certain that that was a requirement.
 
 ---
 
