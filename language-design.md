@@ -17,6 +17,15 @@ For each quote, describe what it was about the quote that led you pick it.
 
 **Response**
 
+>Names matter. Strive for intelligibility, consistency, and
+>symmetry. Every API is a little language, and people must learn to
+>read and write it. If you get an API right, code will read like
+>prose. [Bloch, 2006]
+
+Both Alex and Zoab felt like this point resonated with them. Especially when reading someone else's code, Zoab has observed that the quality of names affects the ease with which he can understand the code - variable names, method names, etc. that correspond to the semantics of the construct allow you to get an idea of how the construct works without having to closely read the implementation. Alex says "Every name is like a gateway. If you understand the name, you can stop reading. If you don't understand, you have to then go read all of the implementation behind that name."
+
+They both recognize that choosing good names can be a struggle, especially when dealing with abstract or complex constructs, but they both think it's worth putting in the effort. There will always be people who misunderstand your naming convention, but if you put effort into choosing names, you can minimize that set. 
+
 
 
 ---
