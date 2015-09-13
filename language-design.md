@@ -26,6 +26,10 @@ Both Alex and Zoab felt like this point resonated with them. Especially when rea
 
 They both recognize that choosing good names can be a struggle, especially when dealing with abstract or complex constructs, but they both think it's worth putting in the effort. There will always be people who misunderstand your naming convention, but if you put effort into choosing names, you can minimize that set. 
 
+> This leads me to claim that, from now on, a main goal in designing a language should be to plan for growth. [Steele, 1998]
+
+Alex and Zoab don't necessarily agree with this statement. They understand that the person making this statement is a general purpose programming language designer, and they can understand the validity of this claim for general purpose programming languages. However, it's not obvious to them that for DSLs in particular, you'd want to design them with a plan for growth. Consider a language that has already expanded to fill its domain, where its domain is likely to remain static. In this case it wouldn't necessarily be a good idea to plan for growth. An example of this kind of language is Picobot - if there's a trade off between making Picobot easier to use or making it easier to grow, we should choose to make it easy to use because we don't expect to have to grow it. 
+
 
 
 ---
