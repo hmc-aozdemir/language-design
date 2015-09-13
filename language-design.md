@@ -44,7 +44,28 @@ How do the themes of _Growing a Language_ relate to the lab we did this week?
 
 **Response**
 
-We didn't necessarily grow the vocab, but we grew the syntax - initially you could only have one word sentences, now you can chain verbs together.
+One way to think about this question is to look at how we grew/changed the language during the lab. We didn't change any of the words (fundamental operations), but we dramatically changed the syntax to allow for more concise use and greater composability. Whereas the original language made composition of sound transformations very challenging, the new syntax allowed for them to be more easily chained.
+
+One approach, which we will refer to as the 'method appraoch' defines a sound class and methods of it which transform and return it, allowing for use like this:
+
+    my_sound.amplify(2).reverse().play()
+   
+One nice property of this approach is that it that it aligns reading/writing order (left to right) with execution order.
+
+Another approach, which we will call the 'function approach' is to have static functions which transformed sound objects like so:
+
+    play(amplify(reverse(my_sound), 2))
+
+This doesn't read/write as nicely, but it allows for the basic functions to be composed, and their compositions would form functions that have the same type as the provided functions.
+
+Zoab notes that even with the method approach users can subclass and add compositions of fundamental operations to their subclass, but acknowledges this does create a difference between user-implemented compositions and the language's fundamental operations. He thinks that aligning read/write ordering with execution ordering is worth creating that distinction.
+
+In the langauge of Guy L. Steele [Steele, 1998] the 'function approach' provides a better plan for growth, which might be advantage.
+
+Interestingly, traditional linguistics also identify this composability as a key linguistic feature._Language Files_ , written by Vedrana Mihalicek identifies
+- the existence of discrete building blocks, and
+- rules for composing them and labelling those compositions
+as key features of languages (Chapter 1).
 
 ---
 
