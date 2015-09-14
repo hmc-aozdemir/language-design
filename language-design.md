@@ -84,7 +84,7 @@ We also think easy of reading is increasingly an attribute of well designed lang
 
 Another plus is when a language _makes it easy to write what you intend, and hard to write what you don't intend_. That is, languages generally have a set of functionality they intend to support, and it would be nice if users could not accidentally do other things. [Rust](http://rust-lang.org) for example is a systems language which enforces memory safety. Given that most systems programmers don't want to violate memory safety (read uninitialized data or derefence null pointers), it's nice that the language prevents this.
 
-Documentation is also a great! :heart: Javadoc :heart:. It should always be unambiguous how a language handles a particular situation. As an example, [LOLCODE](http://lolcode.org/) will sometimes compile and sometimes not compile depending on how many PLZ's there are in your code. While one could argue that requiring PLZ's is not a good PL design choice, it is even worse to not precisely document what that requirement is.
+Documentation is also a great! :heart: Javadoc :heart:. It should always be unambiguous how a language handles a particular situation. As an example, [LOLCODE](http://lolcode.org/) will sometimes compile and sometimes not compile depending on how many PLZ's there are in your code (source: Dan Obermiller). While one could argue that requiring some numebr of PLZ's is not a good PL design choice, it is even worse to not precisely document what that requirement is.
 
 A poorly designed language, then, would be one lacking the good design paradigms that we have discussed above. For instance, LOLCODE can be considered a poorly designed language on account of its poorly documented compilation rules.
 
