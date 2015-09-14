@@ -122,13 +122,17 @@ In the comments, it seems that some people are debating the merits of making a l
 
 We believe this is a false dichotomy - there isn't necessarily a tradeoff between ease of learning and ease of use for programming languages. Some choices would make a PL harder to use for both first-time users and experienced programmers - consider, for instance, requiring all string literals to be presented as character arrays. I think we can all agree that nobody would prefer having to input
 
-    char myString[] = {'h','i','!','\0'};
+    char myString[] = {'H','i','!','\0'};
 
 to
 
     char myString[] = "Hi!";
 
 However, in some cases, there may be a tradeoff between making a language easy to learn and easy to use. Scratch, for instance, was designed to be an easy to learn language (since it's meant to be an introductory language for new programmers) but is virtually impossible to write complex programs in. 
+
+We beleive that when making design decisions about a programming language, it's important to let your audience's needs inform your prioritization of making the language easy to learn vs easy to use. It's probably important for some DSLs to be easy to learn, because they may aimed at non-programmers (consider Picobot). 
+
+We do think that it would be valuable to have a general purpose programming language whose focus is on ease of learning, so that inexperienced programmers are also able to develop complex programs (we feel that Python may occupy this space, but if it's not simple enough we're all for someone writing an even easier to pick up language). 
 
 ---
 
@@ -140,7 +144,14 @@ implementation choices from users?
 
 **Response**
 
+We think that implementation choices can certainly affect the user experience. Consider a language in which user data is stored in a hash set, and users are allowed to define their own data types. In this case, we'd have 2 choices:
+1. Allow users to provide a hash function, implicitly revealing that we're storing their data in a hash set.
+2. Use some built-in hash function to try to hash custom types, even though the function may not be appropriate for the data present.
+In this case, one might want to choose the first option for performance reasons or the second to obscure implementation. Which option we end up choosing will affect the user experience in some way - in the first case, if in the future we moved away from hash sets all of the users' existing code would suddenly stop working (or we'd have to design a workaround). However, in the second case the user would have to deal with bad performance.
 
+When it comes to deciding whether to hide our implementation choices from users, there are (unsurprisingly) tradeoffs to consider. The tradeoffs to consider would probably vary by situation, and our choice on what to do will depend on our priorities when designing the language. 
+
+We can see examples of languages that choose to show or obscure their implementation choices in the real world. C++ chooses to expose the implementation of its sets (hash/tree), to allow users to optimize for performance. Python, by contrast, obscures the implementation of its dictionaries (which are really just hash maps) for the sake of simplicity. 
 
 ---
 
@@ -172,7 +183,11 @@ you do so? If not, why not?
 
 **Response**
 
+When writing a DSL, it seems prudent to include terms that are relevant to the domain that the DSL addresses. For example, in JavaScript, naming the global data structure a window is quite reasonable, as it corresponds to the existing concept of a browser window. 
 
+However, we agree that trying to include natural language in the design of a DSL can be a bad idea. In particular, trying to make writing in your DSL as "easy" as specifying what you want to do in English leads to the same pitfalls that natural language has in terms of ambiguity. In addition, trying to make a DSL like a natural language makes it very hard to parse, perhaps unduly hard to parse - we wouldn't have to make our parsing involve NLP!
+
+One possible exception to this rule would be when designing a DSL for a domain that uses natural language in a very structured and unambiguous way. In this case, you could have your DSL use the domain's syntax without having to incur some of the problems associated with parsing natural language.
 
 ---
 
