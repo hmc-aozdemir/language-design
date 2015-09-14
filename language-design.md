@@ -117,7 +117,12 @@ the commenters?
 
 **Response**
 
-
+In the comments, it seems that some people are debating the merits of making a language easy to learn vs easy to use, with professional programmers favoring the latter and "everyone else" favoring the former. An example of such an argument is made by Strengthiness 
+> A language like Quorum may be good for learning programming concepts, but as an everyday tool for a professional programmer it would be so overly verbose as to just slow one down
+However, we believe this is a false dichotomy - there isn't necessarily a tradeoff between ease of learning and ease of use for programming languages. Some choices would make a PL harder to use for both first-time users and experienced programmers - consider, for instance, requiring all string literals to be presented as character arrays. I think we can all agree that nobody would prefer having to input
+    char myString[] = {'h','i','!','\0'};
+to
+    char myString[] = "Hi!";
 
 ---
 
@@ -171,6 +176,6 @@ Briefly describe how you split up the work for this assignment.
 
 **Response**
 
-
+We read the articles separately, then sat down together to discuss them and wrote our responses as we discussed. We traded off between who was writing every question or two.
 
 ---
